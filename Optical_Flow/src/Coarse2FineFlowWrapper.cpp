@@ -2,7 +2,7 @@
 // It converts the contiguous image array to the format needed by the optical
 // flow code. Handling conversion in the wrapper makes the cythonization
 // simpler.
-
+// Author: Deepak Pathak (c) 2016
 
 #include "Coarse2FineFlowWrapper.h"
 #include "Image.h"
@@ -26,18 +26,24 @@ void Coarse2FineFlowWrapper(double * vx, double * vy, double * warpI2,
   ImFormatted1.setColorType(colType);
   ImFormatted2.setColorType(colType);
 
+  // call optical flow backend
   OpticalFlow::Coarse2FineFlow(vxFormatted, vyFormatted, warpI2Formatted,
                                 ImFormatted1, ImFormatted2,
                                 alpha, ratio, minWidth,
                                 nOuterFPIterations, nInnerFPIterations,
                                 nSORIterations);
 
-
+  // copy formatted output to a contiguous memory to be returned
   memcpy(vx, vxFormatted.pData, h * w * sizeof(double));
   memcpy(vy, vyFormatted.pData, h * w * sizeof(double));
   memcpy(warpI2, warpI2Formatted.pData, h * w * c * sizeof(double));
 
- 
+  // clear c memory
+  ImFormatted1.clear();
+  ImFormatted2.clear();
+  vxFormatted.clear();
+  vyFormatted.clear();
+  warpI2Formatted.clear();
 
   return;
 }

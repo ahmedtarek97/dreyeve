@@ -158,11 +158,11 @@ def DreyeveNet(frames_per_seq, h, w):
     """
     # get saliency branches
     im_net = SaliencyBranch(input_shape=(frames_per_seq, h, w,3), c3d_pretrained=True, branch='image')
-    im_net.load_weights('/home/a_alwali96/GP-2020/Weights/image.h5')
+    #im_net.load_weights('/home/a_alwali96/GP-2020/Weights/image.h5')
     of_net = SaliencyBranch(input_shape=(frames_per_seq, h, w,3), c3d_pretrained=True, branch='optical_flow')
-    of_net.load_weights('/home/a_alwali96/GP-2020/Weights/flow.h5')
+    #of_net.load_weights('/home/a_alwali96/GP-2020/Weights/flow.h5')
     seg_net = SaliencyBranch(input_shape=(frames_per_seq, h, w,3), c3d_pretrained=False, branch='segmentation')
-    seg_net.load_weights('/home/a_alwali96/GP-2020/Weights/segm.h5')
+    #seg_net.load_weights('/home/a_alwali96/GP-2020/Weights/segm.h5')
 
     # define inputs
     X_ff = Input(shape=(1, h, w, 3), name='image_fullframe')

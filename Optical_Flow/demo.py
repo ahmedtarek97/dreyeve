@@ -1,4 +1,4 @@
-
+# Author: Deepak Pathak (c) 2016
 
 from __future__ import absolute_import
 from __future__ import division
@@ -19,13 +19,13 @@ parser.add_argument(
         help='Visualize (i.e. save) output of flow.')
 args = parser.parse_args()
 
-def optical_flow(framepath):
+def optical_flow(framepath, frames):
     dataset_root = framepath
-    output_root = join(framepath,'opticalflow')
+    output_root = join(framepath,'Optical')
     if not os.path.exists(output_root):
         os.mkdir(output_root)
     dir_frames= join(dataset_root,'Frames')
-    for j in range(0,749):
+    for j in range(0,frames - 1):
         im1 = np.array(Image.open(join(dir_frames,'{:d}'.format(j)+'.jpg')))
         im2 = np.array(Image.open(join(dir_frames,'{:d}'.format(j+1)+'.jpg')))
         im1 = cv2.resize(im1,(120,68))
@@ -57,4 +57,5 @@ def optical_flow(framepath):
         hsv[..., 0] = ang * 180 / np.pi / 2
         hsv[..., 2] = cv2.normalize(mag, None, 0, 255, cv2.NORM_MINMAX)
         rgb = cv2.cvtColor(hsv, cv2.COLOR_HSV2BGR)
+        print(j)
         cv2.imwrite(join(output_root,'{}'.format(j)+'.png'), rgb) 

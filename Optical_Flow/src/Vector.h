@@ -1,5 +1,5 @@
 // Author: Ce Liu (c) Dec, 2009; celiu@mit.edu
-
+// Modified By: Deepak Pathak (c) 2016; pathak@berkeley.edu
 
 #pragma once
 
@@ -44,7 +44,13 @@ public:
 	inline T& operator[](int index){return *(pData+index);};
 	Vector<T>& operator=(const Vector<T>& vect);
 
-	
+	//const Vector<T>& operator/(double val) const
+	//{
+	//	Vector<T> result(nDim);
+	//	for(int i =0;i<nDim;i++)
+	//		result.pData[i] = pData[i]/val;
+	//	return result;
+	//}
 
 	Vector<T>& operator+=(const Vector<T>& vect);
 	Vector<T>& operator*=(const Vector<T>& vect);
@@ -56,7 +62,15 @@ public:
 	Vector<T>& operator-=(double val);
 	Vector<T>& operator/=(double val);
 
-	
+	//friend const Vector<T> operator+(const Vector<T>& vect1,const Vector<T>& vect2);
+	//friend const Vector<T> operator*(const Vector<T>& vect1,const Vector<T>& vect2);
+	//friend const Vector<T> operator-(const Vector<T>& vect1,const Vector<T>& vect2);
+	//friend const Vector<T> operator/(const Vector<T>& vect1,const Vector<T>& vect2);
+
+	//friend const Vector<T> operator+(const Vector<T>& vect1,double val);
+	//friend const Vector<T> operator*(const Vector<T>& vect1,double val);
+	//friend const Vector<T> operator-(const Vector<T>& vect1,double val);
+	//friend Vector<T> operator/(const Vector<T>& vect,double val);
 
 	friend double innerproduct(const Vector<T>& vect1,const Vector<T>& vect2)
 	{
@@ -97,7 +111,14 @@ public:
 #endif
 };
 
-
+//template <class T>
+//double innerproduct(const Vector<T>& vect1,const Vector<T>& vect2)
+//{
+//	double result = 0;
+//	for(int i = 0;i<vect1.dim();i++)
+//		result += vect1[i]*vect2[i];
+//	return result;
+//}
 
 template <class T>
 Vector<T>::Vector(void)

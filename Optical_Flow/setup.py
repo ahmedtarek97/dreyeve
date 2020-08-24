@@ -1,4 +1,4 @@
-
+# Author: Deepak Pathak (c) 2016
 
 from __future__ import absolute_import
 from __future__ import division
@@ -15,7 +15,7 @@ sourcefiles = ['pyflow.pyx', ]
 sourcefiles.extend(glob("src/*.cpp"))
 extensions = [Extension("pyflow", sourcefiles, include_dirs=[numpy.get_include()])]
 setup(
-    name="opticalflow",
+    name="pyflow",
     version="1.0",
     description="Python wrapper for the Coarse2Fine Optical Flow code.",
     author="Deepak Pathak",

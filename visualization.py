@@ -1,23 +1,27 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
+"""
+Created on Sun Aug 16 21:36:14 2020
 
+@author: a_alwali96
+"""
 
 import numpy as np
 import cv2
 import sys
 import os
-sys.path.append("Model/")
+sys.path.append("experiments/")
 from os.path import join
 from computer_vision_utils.stitching import stitch_together
 from computer_vision_utils.io_helper import normalize, read_image
 
 
-def visualize(filepath):
+def visualize(filepath,frames):
     small_size = (270, 480)
     output_dir = join(filepath,'jpg')
     if not os.path.exists(output_dir):
         os.mkdir(output_dir)
-    for frame in range(0 + 15 , 749):
+    for frame in range(0 + 15 , frames - 2):
         x_img = read_image(join(filepath,"Frames",'{}.jpg'.format(frame)), channels_first=False,
                        color_mode='BGR', dtype=np.uint8)
         #x_img = cv2.resize(x_img, dsize=(621, 1632))
