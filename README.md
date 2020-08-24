@@ -6,7 +6,7 @@
 
 3) **getFrames.py**: first function to run in the AllinOne file that get first 30 secs of the input video.
 
-4) **Optical_Flow_Code/demo.py**: second function to run to get the optical flow of the first 30 secs of the video frames that outputed from getFrames file.
+4) **Optical_Flow/demo.py**: second function to run to get the optical flow of the first 30 secs of the video frames that outputed from getFrames file.
 
 5) **seg.py**: third function to run(it can run parallelaly with demo file) it get the semantic segmentation of the first 30 secs of the video frames that outputed from getFrames file.
 
