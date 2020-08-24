@@ -3,7 +3,7 @@
 
 import six
 import sys
-sys.path.append('light-weight-refinenet-master/')
+sys.path.append('LightWeight Semantic Segmentation/')
 from models.resnet import rf_lw152
 from utils.helpers import prepare_img
 import cv2
@@ -13,7 +13,7 @@ import os
 from os.path import join
 
 def segment(framepath):
-    cmap = np.load('light-weight-refinenet-master/utils/cmap.npy')
+    cmap = np.load('LightWeight Semantic Segmentation/utils/cmap.npy')
     has_cuda = torch.cuda.is_available()
     n_classes = 60
     
