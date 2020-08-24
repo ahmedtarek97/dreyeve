@@ -1,4 +1,4 @@
-This is the description of the project files: 
+##This is the description of the project files: 
 
 1) main.py: that file we run by putting only the path of the video.
 
@@ -16,7 +16,7 @@ This is the description of the project files:
 
 8) frameTovideo.py: it takes the output jpg images of the visualization file and convert it to a video.
 
-This is the description of the project folders:
+##This is the description of the project folders:
 
 1) Optical_Flow_Code: this folder contain the optical flow model code.
 
