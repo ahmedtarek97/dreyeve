@@ -23,3 +23,11 @@
 2) **light-weight-refinenet-master**: this folder contain the semantic segmentation model code.
 
 3) **model**: this folder contain the predicating driver's focus of attentions model code.
+
+## Additions:
+
+**Youtuve Channel**: [Driver's Focus Of Attention Prediction Videos](https://www.youtube.com/playlist?list=PLpcHTKo4wBZyKHJRIjkMYSKkUdhktd0nz).
+
+**Project Document**: [Predicting Driver's Focus Of Attention Thesis](https://github.com/ahmedtarek97/dreyeve/blob/master/Predicting%20Driver's%20Focus%20Of%20Attention%20Thesis.pdf).
+
+**Model Weights**: [Weights of each branch and tune](https://drive.google.com/drive/folders/1hps4Qm2WwTBXHyMh7KlD_hZpX6hwjvHS?usp=sharing).
